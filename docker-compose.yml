@@ -1,0 +1,12 @@
+services:
+  hqplayer:
+    image: hqplayer:5.6.3
+    container_name: hqplayer
+    network_mode: host
+    volumes:
+      - hqplayer-data:/var/lib/hqplayer/home
+    restart: unless-stopped
+    devices:
+      - "/dev/snd:/dev/snd"
+volumes:
+  hqplayer-data:
