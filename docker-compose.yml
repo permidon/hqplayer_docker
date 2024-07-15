@@ -4,9 +4,11 @@ services:
     container_name: hqplayer
     network_mode: host
     volumes:
-      - hqplayer-data:/var/lib/hqplayer/home
+      - hqplayer-home:/var/lib/hqplayer/home
+      - hqplayer-data:/etc/hqplayer
     restart: unless-stopped
     devices:
       - "/dev/snd:/dev/snd"
 volumes:
+  hqplayer-home:
   hqplayer-data:
