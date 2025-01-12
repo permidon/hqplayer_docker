@@ -1,6 +1,6 @@
 services:
   hqplayer:
-    image: hqplayer:5.7.0
+    image: hqplayer:5.9.4
     container_name: hqplayer
     network_mode: host
     volumes:
