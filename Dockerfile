@@ -1,14 +1,14 @@
-FROM fedora:39
+FROM fedora:41
 
-ENV GMPRIS_VERSION="2.2.1-7"
-ENV HQPLAYERD_VERSION="5.9.4-29"
+ENV GMPRIS_VERSION="2.2.1-8"
+ENV HQPLAYERD_VERSION="5.12.0-35"
 
-RUN curl -OO https://www.sonarnerd.net/src/fc39/libgmpris-${GMPRIS_VERSION}.fc39.x86_64.rpm \
-    https://www.signalyst.eu/bins/hqplayerd/fc39/hqplayerd-${HQPLAYERD_VERSION}.fc39.x86_64.rpm \
-  && yum install -y ./libgmpris-${GMPRIS_VERSION}.fc39.x86_64.rpm \
-    ./hqplayerd-${HQPLAYERD_VERSION}.fc39.x86_64.rpm \
-  && rm -rf ./libgmpris-${GMPRIS_VERSION}.fc39.x86_64.rpm \
-    ./hqplayerd-${HQPLAYERD_VERSION}.fc39.x86_64.rpm \
+RUN curl -OO https://www.sonarnerd.net/src/fc41/libgmpris-${GMPRIS_VERSION}.fc41.x86_64.rpm \
+    https://www.signalyst.eu/bins/hqplayerd/fc41/hqplayerd-${HQPLAYERD_VERSION}.fc41.x86_64.rpm \
+  && yum install -y ./libgmpris-${GMPRIS_VERSION}.fc41.x86_64.rpm \
+    ./hqplayerd-${HQPLAYERD_VERSION}.fc41.x86_64.rpm \
+  && rm -rf ./libgmpris-${GMPRIS_VERSION}.fc41.x86_64.rpm \
+    ./hqplayerd-${HQPLAYERD_VERSION}.fc41.x86_64.rpm \
   && yum clean all \
   && rm -rf /var/cache/yum /var/lib/yum/history/* /tmp/* /var/tmp/* \
   && find /var/log -type f -exec truncate -s 0 {} +
